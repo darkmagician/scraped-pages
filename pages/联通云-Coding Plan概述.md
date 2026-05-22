@@ -1,7 +1,7 @@
 Coding Plan概述
 
 更新时间：
-2026-05-18 10:20:16
+2026-05-22 09:44:07
 
 
 > 公告：
@@ -10,7 +10,7 @@ Coding Plan概述
 >
 > 针对这一情况，近期平台已紧急扩充智算资源。针对免费体验期内的用户，为提升体验效果，平台已上线模型动态调度策略，当您使用的模型触发限流时，系统将自动路由至当前负载更轻的模型，保障服务不间断。感谢您的理解与支持。
 
-联通云AI服务平台 Coding Plan 整合了DeepSeek V4、GLM-5.1、GLM-5、MiniMax M2.5，Qwen3.5等顶级模型，同时兼容主流AI编程工具，折算成本远低于常规 API 调用。
+联通云AI服务平台 Coding Plan 整合了DeepSeek V4、GLM-5.1、Kimi 2.6、Qwen3.6 等顶级模型，同时兼容主流AI编程工具，折算成本远低于常规 API 调用。
 
 * * *
 
@@ -38,10 +38,10 @@ Coding Plan概述
 |     |     |     |
 | --- | --- | --- |
 | 云区域 | 支持模型 | BaseURL（不同AI工具配置略有差异，详见 [接入AI工具](https://support.cucloud.cn/document/127/591/2357.html?id=2357&folderid=3237)） |
-| 贵阳基地二区 | DeepSeek-V4-Flash<br>glm-5.1、glm-5<br>MiniMax-M2.5<br>Qwen3.5-397B-A17B、Qwen3-235B-A22B<br>kimi-k2.5<br>**注：**<br>**当前服务资源有限，DeepSeek-V4-Flash 仅供尝鲜体验，上下文窗口目前仅支持 200K。**<br>高峰期易触发接口限流或响应慢，建议切换模型使用 | 兼容OpenAI协议： https://aigw-gzgy2.cucloud.cn:8443/v1 <br>兼容Anthropic协议：https://aigw-gzgy2.cucloud.cn:8443 |
-| 武汉四区 | DeepSeek-V4-Flash<br>glm-5<br>MiniMax-M2.5<br>Qwen3-235B-A22B<br>kimi-k2.5<br>**注：**<br>**当前服务资源有限，DeepSeek-V4-Flash 仅供尝鲜体验，上下文窗口目前仅支持 200K。** | 同上（贵阳基地二区） |
-| 广州一区 | MiniMax-M2.5 | 同上（贵阳基地二区） |
-| 济南五区 | MiniMax-M2.5 | 兼容OpenAI协议： https://aigw-jnzs5.cucloud.cn:8443/v1<br>兼容Anthropic协议：https://aigw-jnzs5.cucloud.cn:8443 |
+| 贵阳基地二区 | aisp-auto-route：智能路由，系统通过算法自动匹配当前最优模型<br>DeepSeek-V4-Flash<br>glm-5.1、glm-5<br>Qwen3.6-27B<br>kimi-k2.6、kimi-k2.5<br>Qwen3.5-397B-A17B、Qwen3-235B-A22B<br>MiniMax-M2.5<br>**注：**<br>**当前服务资源有限，DeepSeek-V4-Flash 仅供尝鲜体验，上下文窗口目前仅支持 200K。**<br>高峰期易触发接口限流或响应慢，建议切换模型使用 | 兼容OpenAI协议： https://aigw-gzgy2.cucloud.cn:8443/v1 <br>兼容Anthropic协议：https://aigw-gzgy2.cucloud.cn:8443 |
+| 武汉四区 | aisp-auto-route：智能路由，系统通过算法自动匹配当前最优模型<br>DeepSeek-V4-Flash<br>glm-5<br>Qwen3-235B-A22B<br>kimi-k2.5<br>MiniMax-M2.5<br>**注：**<br>**当前服务资源有限，DeepSeek-V4-Flash 仅供尝鲜体验，上下文窗口目前仅支持 200K。** | 同上（贵阳基地二区） |
+| 广州一区 | aisp-auto-route：智能路由，系统通过算法自动匹配当前最优模型<br>MiniMax-M2.5 | 同上（贵阳基地二区） |
+| 济南五区 | aisp-auto-route：智能路由，系统通过算法自动匹配当前最优模<br>型MiniMax-M2.5 | 兼容OpenAI协议： https://aigw-jnzs5.cucloud.cn:8443/v1<br>兼容Anthropic协议：https://aigw-jnzs5.cucloud.cn:8443 |
 
 注1：在后续接入AI工具时配置的模型名称请与此处保持一致；
 
